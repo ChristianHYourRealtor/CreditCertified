@@ -56,6 +56,41 @@ details p{margin:.6em 0 0;color:var(--muted)}
 .cta p{opacity:.85}
 footer{padding:28px 0 40px;font-size:12.5px;color:var(--muted)}
 .hide{display:none}
+.steps5{gap:14px}
+.sb{font:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 6px 24px rgba(20,33,61,.08);transition:box-shadow .3s,border-color .3s}
+.sb .ic{font-size:32px;display:inline-block;animation:bnc 2.8s ease-in-out infinite;animation-delay:var(--d,0s)}
+.sb b{font:700 18px Georgia,serif}.sb .ds{font-size:14.5px;color:var(--muted)}
+.sb .more{max-height:0;opacity:0;overflow:hidden;font-size:14px;transition:max-height .5s,opacity .5s}
+.sb.open .more{max-height:180px;opacity:1;margin-top:4px}
+.sb:after{content:"Tap for more +";font-size:12px;font-weight:700;color:var(--brand)}.sb.open:after{content:"Tap to close −"}
+.sb:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--brand),var(--brand2));transform:scaleY(0);transform-origin:top;transition:transform .5s}.sb:hover:before,.sb.open:before{transform:scaleY(1)}
+.sb:hover,.sb:focus-visible{box-shadow:0 16px 36px rgba(184,134,11,.3);border-color:var(--brand2);outline:none}
+.js .sb{opacity:0;transform:translateY(34px) scale(.9)}
+.js .sb.go{opacity:1;transform:none;transition:opacity .6s var(--d,0s),transform .7s cubic-bezier(.2,1.3,.4,1) var(--d,0s),box-shadow .3s,border-color .3s}
+.js .sb.go:hover{transform:translateY(-6px) rotate(-.6deg);transition-delay:0s}
+@keyframes bnc{0%,70%,100%{transform:translateY(0)}80%{transform:translateY(-8px) rotate(-8deg)}90%{transform:translateY(0) rotate(6deg)}}
+.rd{position:relative;margin:34px auto 20px;max-width:720px;padding-left:58px}
+.rl{position:absolute;left:22px;top:0;bottom:0;width:6px;border-radius:6px;background:repeating-linear-gradient(var(--line) 0 14px,transparent 14px 24px)}
+.rl i{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(var(--brand),var(--brand2));border-radius:6px}
+.car{position:absolute;left:9px;top:0;font-size:28px;transform:rotate(90deg);transition:top .15s linear;z-index:2;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.rm{position:relative;margin-bottom:18px}
+.dot{position:absolute;left:-58px;top:10px;width:38px;height:38px;border-radius:50%;background:var(--surface);border:3px solid var(--line);display:grid;place-items:center;font-weight:800;transition:all .4s;z-index:1}
+.rm.on .dot{background:var(--brand);border-color:var(--brand2);color:#fff;transform:scale(1.15);box-shadow:0 0 0 6px rgba(242,193,78,.25)}
+.rc{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px 18px;cursor:pointer;transition:box-shadow .3s,border-color .3s}
+.rc:hover,.rm.on .rc{border-color:var(--brand2);box-shadow:0 8px 24px rgba(184,134,11,.2)}
+.rc h3{font-size:19px;margin:0 0 2px}.rc p{margin:0;color:var(--muted);font-size:15px}
+.rc .more{display:block;max-height:0;opacity:0;overflow:hidden;font-size:14px;transition:max-height .5s,opacity .5s}.rm.open .more{max-height:120px;opacity:1;margin-top:8px}
+.js .rm{opacity:0;transform:translateX(28px)}.js .rm.go{opacity:1;transform:none;transition:opacity .6s,transform .7s cubic-bezier(.2,1.2,.4,1)}
+.ty{position:fixed;top:0;right:0;bottom:0;left:0;z-index:70;background:rgba(10,16,30,.82);display:grid;place-items:center;padding:20px;animation:tyf .4s}
+.tyc{background:var(--surface);color:var(--ink);border-radius:24px;padding:30px 24px;max-width:440px;text-align:center;border:2px solid var(--brand2);box-shadow:0 0 70px rgba(242,193,78,.5);animation:tyi .8s cubic-bezier(.2,1.4,.4,1)}
+.tyc h2{font-size:26px}.tyc h2:after{display:none}
+.tck{width:88px;height:88px;margin:0 auto 10px;display:block}
+.tck circle{fill:none;stroke:var(--brand2);stroke-width:3;stroke-dasharray:152;stroke-dashoffset:152;animation:dsh .8s .2s forwards}
+.tck path{fill:none;stroke:var(--brand2);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:50;stroke-dashoffset:50;animation:dsh .5s .9s forwards}
+@keyframes dsh{to{stroke-dashoffset:0}}@keyframes tyf{from{opacity:0}}@keyframes tyi{from{opacity:0;transform:scale(.6) translateY(40px)}}
+.cf.gold{z-index:90}
+@media(prefers-reduced-motion:reduce){.sb .ic{animation:none}.tck circle,.tck path{animation:none;stroke-dashoffset:0}}
+@media(max-width:600px){.rd{padding-left:52px}.dot{left:-52px;width:34px;height:34px}.rl{left:19px}.car{left:6px}}
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:30px;padding:0!important;border:0!important;background:transparent!important;margin:4px 0 10px;touch-action:pan-y;display:block}
 input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:8px;background:linear-gradient(90deg,var(--brand),var(--brand2))}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--brand2);margin-top:-10px;box-shadow:0 2px 8px rgba(0,0,0,.35)}
@@ -231,7 +266,7 @@ body{padding-bottom:76px}
     <p><b>Your trusted Realtor® in Pennsville and Salem, New Jersey.</b> I specialize in first-time buyers and in helping people stop renting and start owning.</p>
     <p>I’m a realtor with the Pino Agency here in Pennsville, and I do credit repair, because I kept watching good people get turned down for homes they could have afforded with the right plan. You shouldn’t need two different professionals who never talk to each other. You need one person who sees the whole picture, from your credit report to your closing day.</p>
     <p class="muted" style="margin:0">Backed by a South Jersey brokerage with deep local roots, I help neighbors across Pennsville, Salem County, and the surrounding area.</p>
-    <div class="chips"><span>🏡 Realtor®</span><span>📈 Credit repair</span><span>📍 Pennsville &amp; Salem, NJ</span><span>🤝 Judgment-free</span></div>
+    <div class="chips"><span>🏡 Realtor®</span><span>📈 Credit repair</span><span>📍 Pennsville &amp; Salem, NJ</span><span>🤝 Judgment-free</span><span>🪪 NJ License #2566673</span></div>
     <p style="margin:16px 0 4px"><b>What I specialize in:</b></p>
     <div class="chips"><span>🔑 First-time buyers</span><span>🏠 Renters ready to own</span><span>📈 Buyers rebuilding credit</span><span>💵 Down payment help &amp; FHA / VA / USDA</span><span>🔄 Sellers moving up or on</span></div>
    </div>
@@ -293,15 +328,22 @@ body{padding-bottom:76px}
  </div>
 </section>
 
-<section style="background:var(--surface);border-block:1px solid var(--line)">
+<section id="roadmap" style="background:var(--surface);border-block:1px solid var(--line)">
  <div class="wrap">
-  <h2 class="center">How it works</h2>
-  <div class="grid" style="margin-top:24px">
-   <div class="step"><div class="num">1</div><h3>Free strategy call</h3><p class="muted">Tell me your goals and situation. No pressure, no shame.</p></div>
-   <div class="step"><div class="num">2</div><h3>Custom credit plan</h3><p class="muted">A step-by-step plan built around the home you want to buy.</p></div>
-   <div class="step"><div class="num">3</div><h3>Get lender-ready</h3><p class="muted">I connect you with trusted lenders as your credit improves.</p></div>
-   <div class="step"><div class="num">4</div><h3>Get your keys</h3><p class="muted">Search, offer, negotiate, close. I’m with you the whole way.</p></div>
+  <h2 class="center">Your road to the keys</h2>
+  <p class="center muted" style="max-width:560px;margin:0 auto">From first call to Just Sold. Scroll along the road and tap any stop to learn more.</p>
+  <div class="rd" id="rd">
+   <div class="rl"><i id="rfill"></i></div><div class="car" id="rcar">🚗</div>
+   <div class="rm"><span class="dot">1</span><button type="button" class="rc" aria-expanded="false"><h3>📞 Free consultation</h3><p>We talk goals, budget, and timeline. No pressure, no obligation.</p><span class="more">Bring any questions. I’ll tell you honestly where you stand and what’s realistic.</span></button></div>
+   <div class="rm"><span class="dot">2</span><button type="button" class="rc" aria-expanded="false"><h3>🔍 Credit analysis</h3><p>A full look at your credit report, with no impact to your score.</p><span class="more">We find errors, old accounts, and the items that matter most to lenders.</span></button></div>
+   <div class="rm"><span class="dot">3</span><button type="button" class="rc" aria-expanded="false"><h3>🗺️ Your custom plan</h3><p>A step-by-step plan built around the home you want.</p><span class="more">Clear priorities, simple habits, and a target date to aim for.</span></button></div>
+   <div class="rm"><span class="dot">4</span><button type="button" class="rc" aria-expanded="false"><h3>🛠️ Repair &amp; rebuild</h3><p>We dispute what’s inaccurate and build healthy credit habits.</p><span class="more">Progress updates along the way, so you always know what’s next.</span></button></div>
+   <div class="rm"><span class="dot">5</span><button type="button" class="rc" aria-expanded="false"><h3>🏦 Mortgage-ready</h3><p>I connect you with trusted lenders and the right loan program.</p><span class="more">FHA, VA, USDA, conventional, and assistance programs, matched to you.</span></button></div>
+   <div class="rm"><span class="dot">6</span><button type="button" class="rc" aria-expanded="false"><h3>🏡 Find your home</h3><p>Tours, neighborhoods, and a search tuned to your budget.</p><span class="more">Pennsville, Salem, and South Jersey, with real numbers behind every choice.</span></button></div>
+   <div class="rm"><span class="dot">7</span><button type="button" class="rc" aria-expanded="false"><h3>✍️ Offer &amp; negotiate</h3><p>I craft a strong offer and negotiate hard for you.</p><span class="more">Price, repairs, and timing, all explained in plain English.</span></button></div>
+   <div class="rm"><span class="dot">8</span><button type="button" class="rc" aria-expanded="false"><h3>🎉 Closing day: Just Sold!</h3><p>Keys in hand. Welcome home.</p><span class="more">From first call to closing, you’re never doing this alone.</span></button></div>
   </div>
+  <p class="center"><a class="btn" href="#quiz">Start My Road →</a></p>
  </div>
 </section>
 
@@ -386,11 +428,11 @@ body{padding-bottom:76px}
   <h2 class="center">Selling? Let’s get you top dollar.</h2>
   <p class="center muted" style="max-width:620px;margin:0 auto 24px">A home sale is a project. Here’s how I run it, from the first walkthrough to closing day.</p>
   <div class="grid steps5">
-   <div class="card"><h3>🧹 1. Prep</h3><p class="muted">A walkthrough with simple, high-impact fixes so your home shows its best.</p></div>
-   <div class="card"><h3>🏷️ 2. Price</h3><p class="muted">A pricing strategy built on recent nearby sales and current demand.</p></div>
-   <div class="card"><h3>📣 3. Market</h3><p class="muted">A strong listing presentation, MLS exposure, and online promotion to reach serious buyers.</p></div>
-   <div class="card"><h3>🤝 4. Negotiate</h3><p class="muted">We review every offer together: price, terms, contingencies, and the buyer’s financing.</p></div>
-   <div class="card"><h3>🔑 5. Close</h3><p class="muted">I keep the paperwork and deadlines moving so closing day is calm.</p></div>
+   <button type="button" class="sb" style="--d:0.00s" aria-expanded="false"><span class="ic">🧹</span><b>1. Prep</b><span class="ds">A walkthrough with simple, high-impact fixes so your home shows its best.</span><span class="more">We pick the few upgrades that pay off most: paint, lighting, curb appeal, and decluttering.</span></button>
+   <button type="button" class="sb" style="--d:0.14s" aria-expanded="false"><span class="ic">🏷️</span><b>2. Price</b><span class="ds">A pricing strategy built on recent nearby sales and current demand.</span><span class="more">I compare recent sales and active competition so your price attracts offers without leaving money on the table.</span></button>
+   <button type="button" class="sb" style="--d:0.28s" aria-expanded="false"><span class="ic">📣</span><b>3. Market</b><span class="ds">A strong listing presentation, MLS exposure, and online promotion to reach serious buyers.</span><span class="more">Your home gets a standout listing and wide exposure, so the right buyers see it fast.</span></button>
+   <button type="button" class="sb" style="--d:0.42s" aria-expanded="false"><span class="ic">🤝</span><b>4. Negotiate</b><span class="ds">We review every offer together: price, terms, contingencies, and the buyer’s financing.</span><span class="more">I explain each offer line by line and negotiate on price, repairs, and closing dates.</span></button>
+   <button type="button" class="sb" style="--d:0.56s" aria-expanded="false"><span class="ic">🔑</span><b>5. Close</b><span class="ds">I keep the paperwork and deadlines moving so closing day is calm.</span><span class="more">I track every deadline from inspection to final walkthrough, so there are no surprises.</span></button>
   </div>
   <p class="center" style="margin-top:24px"><a class="btn" href="#book" data-type="Seller consultation / home valuation">Get My Free Home Valuation →</a></p>
  </div>
@@ -437,7 +479,7 @@ body{padding-bottom:76px}
    <h2>Let’s turn your situation into a <em>Just Sold.</em></h2>
    <p>This is a home I helped a client sell. Next, it could be you getting the keys to your own. No matter where you’re starting, you can own a home too, with my help.</p>
    <div class="pills"><span>FREE CONSULTATION</span><span>NO OBLIGATION</span><span>CONFIDENTIAL</span></div>
-   <a class="btn" href="#quiz">Start Your Story →</a> <a class="btn alt" style="color:#fff;border-color:#fff" href="tel:8565692090">Call 856-569-2090</a>
+   <a class="btn" href="#quiz">Start Your Story →</a> <a class="btn alt" style="color:#fff;border-color:#fff" href="tel:+18565692090">Call 856-569-2090</a>
   </div>
  </div>
 </section>
@@ -455,23 +497,23 @@ body{padding-bottom:76px}
    <a class="btn" style="width:100%;text-align:center" id="send" href="#">Request My Free Call</a>
    <a class="btn alt" style="width:100%;text-align:center;margin-top:8px" id="sms" href="#">Text Me Instead</a>
    <p class="muted center" style="font-size:13px;margin:12px 0 0">Already booked? <a href="https://claude.ai/artifact/WeNawQ6bhWq8yaqMjHYoC3" target="_blank" rel="noopener" style="color:inherit"><b>Track your appointment →</b></a></p>
-   <p class="muted center" style="font-size:13px;margin:6px 0 0">Prefer to talk now? Call or text <a href="tel:8565692090" style="color:inherit"><b>856-569-2090</b></a></p>
+   <p class="muted center" style="font-size:13px;margin:6px 0 0">Prefer to talk now? Call or text <a href="tel:+18565692090" style="color:inherit"><b>856-569-2090</b></a></p>
   </div>
  </div>
 </section>
 
-<div class="sticky"><a href="tel:8565692090" style="color:#fff;font-weight:600;text-decoration:none">📞 Call Christian</a><a class="btn" href="#quiz">Start Quiz</a></div>
+<div class="sticky"><a href="tel:+18565692090" style="color:#fff;font-weight:600;text-decoration:none">📞 Call Christian</a><a class="btn" href="#quiz">Start Quiz</a></div>
 
 <footer>
  <div class="wrap">
-  <b>Christian Hunter</b> · Licensed Realtor® · The Pino Agency · Pennsville, NJ · 70 N Broadway, Pennsville, NJ 08070 · <a href="tel:8565692090" style="color:inherit">856-569-2090</a> · <a href="mailto:ChristianHYourRealtor@gmail.com" style="color:inherit">ChristianHYourRealtor@gmail.com</a> · [License #]<br><br>
+  <b>Christian Hunter</b> · Licensed Realtor® · The Pino Agency · Pennsville, NJ · 70 N Broadway, Pennsville, NJ 08070 · <a href="tel:+18565692090" style="color:inherit">856-569-2090</a> · <a href="mailto:ChristianHYourRealtor@gmail.com" style="color:inherit">ChristianHYourRealtor@gmail.com</a> · NJ License #2566673<br><br>
   Results vary and depend on each person’s credit history and circumstances. No one can legally promise to remove accurate negative information or guarantee a specific score or loan approval. Under federal law you have the right to dispute errors on your own credit report at no cost. Credit repair services are provided according to the Credit Repair Organizations Act and applicable state law. Equal Housing Opportunity.
  </div>
 </footer>
 
 <script>
 document.documentElement.classList.add("js");
-setTimeout(()=>document.querySelectorAll(".rv,.pf").forEach(e=>e.classList.add("in","go")),3500);
+setTimeout(()=>document.querySelectorAll(".rv,.pf,.sb,.rm").forEach(e=>e.classList.add("in","go")),3500);
 const EMAIL="ChristianHYourRealtor@gmail.com";
 const Q=[
  {q:"What’s your big goal?",o:["Buy my first home","Buy again / move up","Rent-to-own or investing","Just fix my credit first"],k:"goal"},
@@ -529,8 +571,37 @@ function calc(){
 
 function lead(){const n=$("rn").value.trim(),p=$("rp").value.trim();if(!n||!p){alert("Please add your name and phone number.");return null}
  return `Name: ${n}\nPhone: ${p}\nEmail: ${$("re").value||"-"}\nNeed: ${$("rt").value}\nPreferred: ${$("rd").value||"flexible"}, ${$("rtm").value}\nGoal: ${A.goal||"-"}\nCredit: ${A.score||"-"}\nMain issue: ${A.issue||"-"}`}
-$("send").addEventListener("click",e=>{e.preventDefault();const b=lead();if(b)location.href=`mailto:${EMAIL}?subject=${encodeURIComponent("Appointment request: "+$("rt").value)}&body=${encodeURIComponent(b)}`});
-$("sms").addEventListener("click",e=>{e.preventDefault();const b=lead();if(b)location.href=`sms:8565692090?&body=${encodeURIComponent("Hi Christian, I’d like to book. "+b.replace(/\n/g,", "))}`});
+/* Set LEAD_URL to a form-service endpoint to enable in-page submit + gold confetti thank-you */
+const LEAD_URL="https://formsubmit.co/ajax/ChristianHYourRealtor@gmail.com";
+const LEAD_KEY="";
+function goldBurst(){
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+ const c=["#f2c14e","#b8860b","#ffd86b","#e8b923","#fff1b8"];
+ for(let k=0;k<120;k++){const d=document.createElement("div");d.className="cf gold";d.style.left=Math.random()*100+"vw";d.style.background=c[k%5];d.style.width=(6+Math.random()*8)+"px";d.style.height=(8+Math.random()*10)+"px";d.style.animationDelay=Math.random()*.9+"s";d.style.animationDuration=(2.2+Math.random()*1.6)+"s";d.style.borderRadius=k%3?"2px":"50%";document.body.appendChild(d);setTimeout(()=>d.remove(),5200);}
+}
+function thanks(name){
+ const o=document.createElement("div");o.className="ty";
+ o.innerHTML='<div class="tyc"><svg class="tck" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg><h2>Your information has been submitted! 🎉</h2><p id="tyn"></p><p><b>This is the first step toward the rest of your life.</b> 🔑✨ Welcome home, soon.</p><button class="btn" id="tyx">Close</button></div>';
+ document.body.appendChild(o);o.querySelector("#tyn").textContent="Thank you"+(name?", "+name.split(" ")[0]:"")+"! We’ll be in contact very soon.";
+ o.querySelector("#tyx").onclick=()=>o.remove();goldBurst();setTimeout(goldBurst,1100);
+}
+$("send").addEventListener("click",async e=>{
+ e.preventDefault();const b=lead();if(!b)return;
+ if(!LEAD_URL){location.href=`sms:+18565692090?&body=${encodeURIComponent("Hi Christian, I’d like to book. "+b.replace(/\n/g,", "))}`;return}
+ const btn=$("send");btn.textContent="Sending…";
+ try{
+  const r=await fetch(LEAD_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({access_key:LEAD_KEY||undefined,_subject:"New appointment request: "+$("rt").value,_template:"table",_captcha:"false",name:$("rn").value.trim(),phone:$("rp").value.trim(),email:$("re").value.trim(),need:$("rt").value,preferred:($("rd").value||"flexible")+", "+$("rtm").value,message:b})});
+  if(!r.ok)throw new Error("bad");thanks($("rn").value.trim());
+ }catch(x){alert("We couldn’t send that online just now, so we’re opening a text to Christian instead. Just tap send.");location.href=`sms:+18565692090?&body=${encodeURIComponent("Hi Christian, I’d like to book. "+b.replace(/\n/g,", "))}`}
+ btn.textContent="Request My Free Call";
+});
+document.querySelectorAll(".sb").forEach(b=>b.addEventListener("click",()=>{const o=b.classList.toggle("open");b.setAttribute("aria-expanded",o)}));
+(function(){const rd=$("rd");if(!rd)return;const ms=[...rd.querySelectorAll(".rm")],fill=$("rfill"),car=$("rcar");
+ function up(){const r=rd.getBoundingClientRect(),vh=innerHeight,p=Math.min(1,Math.max(0,(vh*.55-r.top)/r.height));fill.style.height=p*100+"%";car.style.top=(p*r.height-14)+"px";ms.forEach(m=>m.classList.toggle("on",m.getBoundingClientRect().top<vh*.6))}
+ addEventListener("scroll",()=>requestAnimationFrame(up),{passive:true});addEventListener("resize",up);up();
+ ms.forEach(m=>m.querySelector(".rc").addEventListener("click",()=>{const o=m.classList.toggle("open");m.querySelector(".rc").setAttribute("aria-expanded",o)}));
+})();
+$("sms").addEventListener("click",e=>{e.preventDefault();const b=lead();if(b)location.href=`sms:+18565692090?&body=${encodeURIComponent("Hi Christian, I’d like to book. "+b.replace(/\n/g,", "))}`});
 document.querySelectorAll("[data-type]").forEach(a=>a.addEventListener("click",()=>{$("rt").value=a.dataset.type}));
 const dust=document.querySelector(".dust");for(let k=0;k<22;k++){const i=document.createElement("i"),z=2+Math.random()*4;i.style.cssText=`left:${Math.random()*100}%;width:${z}px;height:${z}px;animation-duration:${8+Math.random()*10}s;animation-delay:${-Math.random()*12}s`;dust.appendChild(i)}
 
@@ -540,7 +611,7 @@ const TABS=[
  ["Know your report. Know your next move.",["A line-by-line review of all three bureau reports","Disputes for items that look inaccurate or unverifiable","Habits and goals that help your score over time","A clear path from rebuilding to buying"]]];
 function tab(n){
  document.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("on",i==n));
- const t=TABS[n];$("panel").innerHTML=`<h3>${t[0]}</h3><ul>${t[1].map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn" href="#quiz">Start the Quiz →</a> <a class="btn alt" href="tel:8565692090">Call 856-569-2090</a>`;
+ const t=TABS[n];$("panel").innerHTML=`<h3>${t[0]}</h3><ul>${t[1].map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn" href="#quiz">Start the Quiz →</a> <a class="btn alt" href="tel:+18565692090">Call 856-569-2090</a>`;
 }
 document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>tab(+b.dataset.t));tab(0);
 const F=[["Payment history",35,"Paying on time is the biggest lever. Even one recent late payment can hurt."],["Amounts owed",30,"Keep card balances low compared to limits. Under 30% is a common target; lower is better."],["Length of history",15,"Older accounts help. Think twice before closing your oldest card."],["New credit",10,"Lots of new applications in a short time can dip your score."],["Credit mix",10,"A healthy mix of cards and loans helps a little, but don’t open accounts just for this."]];
@@ -587,7 +658,7 @@ document.querySelectorAll("section .card,.step").forEach(e=>e.classList.add("in"
  const W=["buy their first home","stop renting and start owning","rebuild after a setback","clean up their credit report","get mortgage-ready","sell with confidence"],r=$("rot");let k=0;
  if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(()=>{r.style.opacity=0;setTimeout(()=>{k=(k+1)%W.length;r.textContent=W[k];r.style.opacity=1},350)},2600);
  const cnt=e=>{const n=+e.dataset.n,pre=e.dataset.pre||"",t0=performance.now();(function st(t){const q=Math.min(1,(t-t0)/1500),v=Math.round(n*(1-Math.pow(1-q,3)));e.textContent=pre+v.toLocaleString("en-US");if(q<1)requestAnimationFrame(st)})(t0)};
- const els=document.querySelectorAll(".pf,.pstats b");
+ const els=document.querySelectorAll(".pf,.pstats b,.sb,.rm");
  if("IntersectionObserver" in window){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.dataset.n?cnt(e.target):e.target.classList.add("go");o.unobserve(e.target)}}),{threshold:.25});els.forEach(e=>o.observe(e))}
  else els.forEach(e=>e.dataset.n?cnt(e):e.classList.add("go"));
 })();
